@@ -2,7 +2,7 @@
 
 In this project, you'll use what you've learned about React to build an app that can perform simple search queries on the movies API provided by [OMdB](http://www.omdbapi.com/).
 
-Please work together as a group to complete this project.  Your project should live within this GitHub repository so that you can collaborate together to build this app and so that we can review your code and provide feedback.
+Your project should live within a GitHub repository so that we can review your code and provide feedback.
 
 ## App specs
 
