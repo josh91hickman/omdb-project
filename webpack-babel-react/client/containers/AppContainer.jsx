@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import App from '../components/App/App';
 
 class AppContainer extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
     this.state = {
 
@@ -16,7 +16,13 @@ class AppContainer extends Component {
   }
   render() {
     return (
-      <App />
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <App />
+          </div>
+        </div>
+      </div>
     );
   }
 }
@@ -25,12 +31,12 @@ class AppContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     state,
-  }
-}
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
-  }
-}
+  };
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
