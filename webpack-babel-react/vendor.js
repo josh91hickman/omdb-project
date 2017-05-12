@@ -17,7 +17,7 @@ var vendor = [
   'whatwg-fetch'
 ]
 
-if (process.env.NODE_ENV === 'develop') {
+if (process.env.NODE_ENV === 'development') {
   vendor.push('webpack-dev-server/client?http://localhost:' + PORT);
 }
 
