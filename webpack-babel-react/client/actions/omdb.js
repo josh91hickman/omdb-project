@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const REQUEST_MOVIES_DATA = 'REQUEST_MOVIES_DATA';
-export const REQUEST_MOVIES_DATA_ERROR = 'REQUEST_MOVIE_DATA_ERROR';
-export const REQUEST_MOVIES_DATA_SUCCESS = 'REQUEST_MOVIE_DATA_SUCCESS';
+export const REQUEST_MOVIES_DATA_ERROR = 'REQUEST_MOVIES_DATA_ERROR';
+export const REQUEST_MOVIES_DATA_SUCCESS = 'REQUEST_MOVIES_DATA_SUCCESS';
 
 const requestMoviesData = () => {
   return {
@@ -36,7 +36,6 @@ export const fetchMoviesData = (searchTerm) => {
     axios.get(`http://www.omdbapi.com/?s=${searchTerm}`)
       .then((response) => {
         if (response.status === 200 && response.data.Response === 'True') {
-          console.log(response);
           dispatch(requestMoviesDataSuccess(response.data))
         } else {
           dispatch(requestMoviesDataError(response.Response));

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const MovieEntry = ({ movie }) => {
-  console.log(movie); 
   const { Title, Year, imdbID, Poster } = movie;
   return (
     <div className="movie-result" onClick={() => { browserHistory.push(`/movie/${imdbID}`); }}>

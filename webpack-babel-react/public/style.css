@@ -2,12 +2,21 @@
   margin-top: 15px;
 }
 
+.movie-detail {
+  line-height: 45px;
+  font-size: 18px;
+}
+
 .movie-result {
-  /*border: 1px solid grey;*/
+  border: 1px solid oldlace;
   margin: 10px;
   cursor: pointer;
 }
 
 .movie-result:hover {
   box-shadow: 5px 5px 5px #888888;
+}
+
+h5 {
+  display: inline;
 }
