@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { fetchMovieData } from '../actions/movie';
 
 // components
 import App from '../components/App/App';
@@ -12,14 +13,18 @@ class AppContainer extends Component {
     };
   }
   componentDidMount() {
-    
+    console.log(this.props);
   }
   render() {
+    console.log(this.props);
+    const { fetchMovies } = this.props;
     return (
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <App />
+            <App
+              fetchMovieData={fetchMovies}
+            />
           </div>
         </div>
       </div>
@@ -27,14 +32,19 @@ class AppContainer extends Component {
   }
 }
 
+AppContainer.propTypes = {
+  fetchMovies: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => {
+  const { movies } = state.movies;
   return {
-    state,
+    movies,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchMovies: searchTerm => dispatch(fetchMovieData(searchTerm)),
   };
 };
 

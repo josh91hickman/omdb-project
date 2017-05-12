@@ -18,12 +18,13 @@ class SearchBar extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    const { fetchMovieData } = this.props;
     const searchTerm = this.state.value;
     if (!searchTerm) {
       swal(searchError);
     }
     console.log(searchTerm);
-
+    fetchMovieData(searchTerm);
     this.setState({
       value: '',
     });
