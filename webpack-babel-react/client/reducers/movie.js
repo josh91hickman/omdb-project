@@ -2,6 +2,8 @@ import * as ActionTypes from '../actions/movie';
 
 export default function movieReducer(state = {
   movies: [],
+  isFetching: false,
+  results: 0,
 }, action) {
   switch (action.type) {
     case ActionTypes.REQUEST_MOVIE_DATA:

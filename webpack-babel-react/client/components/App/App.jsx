@@ -5,7 +5,7 @@ import './style.css';
 import Header from './Header';
 import Search from './Search';
 
-const App = ({ fetchMovieData }) => (
+const App = ({ fetchMovieData, isFetching }) => (
   <div className="text-center">
     <Header />
     <hr />
@@ -14,6 +14,9 @@ const App = ({ fetchMovieData }) => (
         <Search
           fetchMovieData={fetchMovieData}
         />
+        { !isFetching ?
+          ''
+          : 'loading...' }
       </div>
     </div>
   </div>
@@ -21,6 +24,7 @@ const App = ({ fetchMovieData }) => (
 
 App.propTypes = {
   fetchMovieData: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool.isRequired,
 };
 
 export default App;
