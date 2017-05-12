@@ -18,9 +18,11 @@ class MovieContainer extends Component {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            { !isFetching ?
-              <Movie movie={movie} />
-              : '...loading' }
+            <Movie
+              movie={movie}
+              isFetching={isFetching}
+              error={error}
+            />
           </div>
         </div>
       </div>
@@ -33,6 +35,7 @@ MovieContainer.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   movie: PropTypes.shape(movieShape).isRequired,
   params: PropTypes.shape({ id: PropTypes.string }),
+  error: PropTypes.string,
 };
 
 const mapStateToProps = (state) => {

@@ -16,7 +16,7 @@ const Home = ({ fetchMovieData, isFetching }) => (
         />
         { !isFetching ?
           ''
-          : 'loading...' }
+          : <h3>loading...</h3> }
       </div>
     </div>
   </div>

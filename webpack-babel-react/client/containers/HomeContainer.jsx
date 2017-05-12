@@ -17,7 +17,7 @@ class AppContainer extends Component {
     console.log(this.props);
   }
   render() {
-    const { fetchMovies, movies, isFetching, results } = this.props;
+    const { fetchMovies, movies, isFetching } = this.props;
     return (
       <div className="container">
         <div className="row">
@@ -25,7 +25,6 @@ class AppContainer extends Component {
             <Home
               fetchMovieData={fetchMovies}
               isFetching={isFetching}
-              results={results}
             />
           </div>
         </div>
@@ -42,6 +41,8 @@ class AppContainer extends Component {
 
 AppContainer.propTypes = {
   fetchMovies: PropTypes.func.isRequired,
+  movies: PropTypes.arrayOf(PropTypes.object),
+  isFetching: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state) => {
