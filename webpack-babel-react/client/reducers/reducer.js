@@ -1,5 +1,9 @@
-export default function reducer(state, action) {
+
+export default function reducer(state = {
+  movies: [],
+}, action) {
   switch (action.type) {
-    default: return state;
+    default:
+      return state;
   }
 }

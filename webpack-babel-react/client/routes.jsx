@@ -1,6 +1,7 @@
+import React from 'react';
 import { Route } from 'react-router';
-import Index from './index/App';
+import App from './components/App/App';
 
 export default (
-  <Route path="/" component={Index} />
+  <Route path="/" component={App} />
 );

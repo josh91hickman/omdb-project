@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import store from './store/store';
 import routes from './routes';
-import './setup';
+import './config/setup';
 
 render(
   <Provider store={store}>
