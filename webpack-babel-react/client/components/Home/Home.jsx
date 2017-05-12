@@ -5,7 +5,7 @@ import './style.css';
 import Header from './Header';
 import Search from './Search';
 
-const App = ({ fetchMovieData, isFetching }) => (
+const Home = ({ fetchMovieData, isFetching }) => (
   <div className="text-center">
     <Header />
     <hr />
@@ -22,9 +22,9 @@ const App = ({ fetchMovieData, isFetching }) => (
   </div>
 );
 
-App.propTypes = {
+Home.propTypes = {
   fetchMovieData: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 
-export default App;
+export default Home;

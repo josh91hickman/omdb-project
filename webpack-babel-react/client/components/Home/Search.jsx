@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { default as swal } from 'sweetalert2';
 import errors from '../../utils/errors';
+import debounce from '../../utils/debounce';
 
 const searchError = errors.searchError;
 
@@ -14,7 +15,17 @@ class SearchBar extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInputChange(e) {
+    const searchTerm = this.state.value;
+    const { fetchMovieData } = this.props;
     this.setState({ value: e.target.value });
+
+    if (this.state.value.length > 3) {
+    const debounced = debounce(() => {
+      fetchMovieData(searchTerm)
+    }, 1000);
+      debounced();
+    }
+    console.log(searchTerm);
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +34,6 @@ class SearchBar extends Component {
     if (!searchTerm) {
       swal(searchError);
     }
-    console.log(searchTerm);
     fetchMovieData(searchTerm);
     this.setState({
       value: '',

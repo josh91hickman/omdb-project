@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
 
-import movies from './movie';
+import movies from './omdb';
 
 
 const rootReducer = combineReducers({

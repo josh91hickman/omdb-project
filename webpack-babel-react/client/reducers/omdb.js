@@ -1,9 +1,10 @@
-import * as ActionTypes from '../actions/movie';
+import * as ActionTypes from '../actions/omdb';
 
 export default function movieReducer(state = {
   movies: [],
   isFetching: false,
   results: 0,
+  error: null,
 }, action) {
   switch (action.type) {
     case ActionTypes.REQUEST_MOVIE_DATA:
