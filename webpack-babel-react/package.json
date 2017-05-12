@@ -9,12 +9,16 @@
     "vendor": "webpack --config vendor.js"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
-    "redux-saga": "^0.12.0"
+    "redux-logger": "^3.0.1",
+    "redux-saga": "^0.12.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
