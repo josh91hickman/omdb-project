@@ -1,15 +1,18 @@
-var path     = require('path');
-var webpack  = require('webpack');
+const path     = require('path');
+const webpack  = require('webpack');
+const DotenvPlugin = require('webpack-dotenv-plugin');
 
-var config   = require('./config');
-var manifest = require('./manifest');
+const config   = require('./config');
+const manifest = require('./manifest');
 
-var CONTEXT = __dirname;
-var PORT    = config.PORT;
+const CONTEXT = __dirname;
+const PORT    = config.PORT;
+
+
 
 module.exports = {
   context: CONTEXT,
-  entry: ['whatwg-fetch', 'babel-polyfill', './ui/entry.js'],
+  entry: ['whatwg-fetch', 'babel-polyfill', './client/index.jsx'],
   output: {
     path: path.resolve(CONTEXT, 'public/dist'),
     publicPath: 'http://localhost:' + PORT + '/dist/',
@@ -51,5 +54,9 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({ context: CONTEXT, manifest: manifest }),
+    new DotenvPlugin({
+      sample: './.env.example',
+      path: './.env'
+    }),
   ]
 }
