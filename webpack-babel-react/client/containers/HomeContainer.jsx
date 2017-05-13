@@ -6,7 +6,7 @@ import { fetchMoviesData } from '../actions/omdb';
 import Home from '../components/Home/Home';
 import Results from '../components/Results/Results';
 
-class AppContainer extends Component {
+class HomeContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +36,7 @@ class AppContainer extends Component {
   }
 }
 
-AppContainer.propTypes = {
+HomeContainer.propTypes = {
   fetchMovies: PropTypes.func.isRequired,
   movies: PropTypes.arrayOf(PropTypes.object),
   isFetching: PropTypes.bool.isRequired,
@@ -58,5 +58,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
 
