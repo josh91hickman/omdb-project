@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-0'],
           plugins: ['transform-decorators-legacy']
@@ -31,20 +31,20 @@ module.exports = {
       }, {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-0', 'react'],
           plugins: ['transform-decorators-legacy']
         }
       }, {
         test: /\.css$/,
-        loader: 'style!css'
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx'],
   },
   devServer: {
     contentBase: 'public',

@@ -4,44 +4,38 @@ export const REQUEST_MOVIE_DATA = 'REQUEST_MOVIE_DATA';
 export const REQUEST_MOVIE_DATA_ERROR = 'REQUEST_MOVIE_DATA_ERROR';
 export const REQUEST_MOVIE_DATA_SUCCESS = 'REQUEST_MOVIE_DATA_SUCCESS';
 
-const requestMovieData = () => {
-  return {
+const requestMovieData = () => (
+  {
     type: REQUEST_MOVIE_DATA,
     isFetching: true,
-  };
-};
+  }
+);
 
-const requestMovieDataError = (error) => {
-  return {
+const requestMovieDataError = error => (
+  {
     type: REQUEST_MOVIE_DATA_ERROR,
     error,
-  };
-};
+  }
+);
 
-const requestMovieDataSuccess = (data) => {
-  const movies = data.Search;
-  const results = data.totalResults;
-  return {
-    type: REQUEST_MOVIE_DATA_SUCCESS,
-    movies,
-    results,
-  };
-};
+const requestMovieDataSuccess = movie => (
+  { type: REQUEST_MOVIE_DATA_SUCCESS,
+    movie,
+  }
+);
+
 
 /* Async thunk to fetch movie data */
-export const fetchMovieData = (searchTerm) => {
+export const fetchMovieData = (id) => {
   return (dispatch) => {
     dispatch(requestMovieData());
 
-    axios.get(`http://www.omdbapi.com/?s=${searchTerm}`)
+    axios.get(`http://www.omdbapi.com/?i=${id}&plot=full&r=json`)
       .then((response) => {
         if (response.status === 200) {
-          dispatch(requestMovieDataSuccess(response.data))
-        } else {
-          dispatch(requestMovieDataError(response.Response));
+          dispatch(requestMovieDataSuccess(response.data));
         }
       })
       .catch(e => dispatch(requestMovieDataError(e)));
   };
 };
-

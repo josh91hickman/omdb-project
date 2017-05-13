@@ -1,9 +1,9 @@
-import * as ActionTypes from '../actions/movie';
+import * as ActionTypes from '../actions/imdb';
 
 export default function movieReducer(state = {
-  movies: [],
+  movie: {},
   isFetching: false,
-  results: 0,
+  error: null,
 }, action) {
   switch (action.type) {
     case ActionTypes.REQUEST_MOVIE_DATA:
@@ -11,7 +11,7 @@ export default function movieReducer(state = {
     case ActionTypes.REQUEST_MOVIE_DATA_ERROR:
       return { ...state, isFetching: false, error: action.error };
     case ActionTypes.REQUEST_MOVIE_DATA_SUCCESS:
-      return { ...state, isFetching: false, movies: action.movies, results: action.results };
+      return { ...state, isFetching: false, movie: action.movie };
     default:
       return state;
   }

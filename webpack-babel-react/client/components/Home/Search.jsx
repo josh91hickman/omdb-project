@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { default as swal } from 'sweetalert2';
 import errors from '../../utils/errors';
 
@@ -23,7 +23,6 @@ class SearchBar extends Component {
     if (!searchTerm) {
       swal(searchError);
     }
-    console.log(searchTerm);
     fetchMovieData(searchTerm);
     this.setState({
       value: '',
@@ -31,20 +30,26 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="input-group input-group-lg">
-          <input
-            type="text"
-            value={this.state.value}
-            className="form-control"
-            placeholder="Toy Story 3"
-            onChange={this.handleInputChange}
-          />
-          <button type="submit" className="btn btn-primary search">Find Movies!</button>
-        </div>
-      </form>
+      <div className="search-form">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group input-group-lg">
+            <input
+              type="text"
+              value={this.state.value}
+              className="form-control"
+              placeholder="Toy Story 3..."
+              onChange={this.handleInputChange}
+            />
+            <button type="submit" className="btn btn-primary search">Find Movies!</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
+
+SearchBar.propTypes = {
+  fetchMovieData: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

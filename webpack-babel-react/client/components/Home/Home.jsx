@@ -5,26 +5,26 @@ import './style.css';
 import Header from './Header';
 import Search from './Search';
 
-const App = ({ fetchMovieData, isFetching }) => (
+const Home = ({ fetchMovieData, isFetching }) => (
   <div className="text-center">
     <Header />
     <hr />
-    <div className="col-md-4 col-md-offset-4 col-sm-12">
+    <div className="col-md-6 col-md-offset-3 col-sm-12">
       <div className="text-center">
         <Search
           fetchMovieData={fetchMovieData}
         />
         { !isFetching ?
           ''
-          : 'loading...' }
+          : <h3>loading...</h3> }
       </div>
     </div>
   </div>
 );
 
-App.propTypes = {
+Home.propTypes = {
   fetchMovieData: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 
-export default App;
+export default Home;

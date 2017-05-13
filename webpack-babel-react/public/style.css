@@ -1,3 +1,39 @@
 .search {
   margin-top: 15px;
 }
+
+
+.movie-detail {
+  line-height: 45px;
+  font-size: 18px;
+}
+
+.movie-detail-plot {
+  font-size: 18px;
+}
+
+.movie-result {
+  /*border: 1px solid black;*/
+  cursor: pointer;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.movie-result:hover {
+ opacity: .5;
+}
+
+h5 {
+  display: inline;
+}
+
+ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+div {
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+}
