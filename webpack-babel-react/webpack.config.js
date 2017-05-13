@@ -54,9 +54,5 @@ module.exports = {
   },
   plugins: [
     new webpack.DllReferencePlugin({ context: CONTEXT, manifest: manifest }),
-    new DotenvPlugin({
-      sample: './.env.example',
-      path: './.env'
-    }),
   ]
 }

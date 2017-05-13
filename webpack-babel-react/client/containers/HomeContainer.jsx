@@ -13,9 +13,6 @@ class AppContainer extends Component {
 
     };
   }
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     const { fetchMovies, movies, isFetching } = this.props;
     return (
