@@ -9,7 +9,7 @@ const Home = ({ fetchMovieData, isFetching }) => (
   <div className="text-center">
     <Header />
     <hr />
-    <div className="col-md-4 col-md-offset-4 col-sm-12">
+    <div className="col-md-6 col-md-offset-3 col-sm-12">
       <div className="text-center">
         <Search
           fetchMovieData={fetchMovieData}

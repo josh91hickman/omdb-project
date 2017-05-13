@@ -30,18 +30,20 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="input-group input-group-lg">
-          <input
-            type="text"
-            value={this.state.value}
-            className="form-control"
-            placeholder="Toy Story 3"
-            onChange={this.handleInputChange}
-          />
-          <button type="submit" className="btn btn-primary search">Find Movies!</button>
-        </div>
-      </form>
+      <div className="search-form">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group input-group-lg">
+            <input
+              type="text"
+              value={this.state.value}
+              className="form-control"
+              placeholder="Toy Story 3..."
+              onChange={this.handleInputChange}
+            />
+            <button type="submit" className="btn btn-primary search">Find Movies!</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

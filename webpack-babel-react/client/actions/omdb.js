@@ -4,19 +4,19 @@ export const REQUEST_MOVIES_DATA = 'REQUEST_MOVIES_DATA';
 export const REQUEST_MOVIES_DATA_ERROR = 'REQUEST_MOVIES_DATA_ERROR';
 export const REQUEST_MOVIES_DATA_SUCCESS = 'REQUEST_MOVIES_DATA_SUCCESS';
 
-const requestMoviesData = () => {
-  return {
+const requestMoviesData = () => (
+  {
     type: REQUEST_MOVIES_DATA,
     isFetching: true,
-  };
-};
+  }
+);
 
-const requestMoviesDataError = (error) => {
-  return {
+const requestMoviesDataError = error => (
+  {
     type: REQUEST_MOVIES_DATA_ERROR,
     error,
-  };
-};
+  }
+);
 
 const requestMoviesDataSuccess = (data) => {
   const movies = data.Search;
@@ -36,7 +36,7 @@ export const fetchMoviesData = (searchTerm) => {
     axios.get(`http://www.omdbapi.com/?s=${searchTerm}`)
       .then((response) => {
         if (response.status === 200 && response.data.Response === 'True') {
-          dispatch(requestMoviesDataSuccess(response.data))
+          dispatch(requestMoviesDataSuccess(response.data));
         } else {
           dispatch(requestMoviesDataError(response.Response));
         }

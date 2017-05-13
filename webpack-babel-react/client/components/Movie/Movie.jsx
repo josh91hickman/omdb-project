@@ -20,7 +20,7 @@ const Movie = ({ movie, isFetching }) => {
           <div className="col-md-6">
             <h5 className="movie-detail">Rated:</h5> { movie.Rated }
             <br />
-            <h5 className="movie-detail">Plot:</h5> { movie.Plot }
+            <h5 className="movie-detail-plot">Plot:</h5> { movie.Plot }
             <br />
             <h5 className="movie-detail">Released:</h5> { movie.Released }
             <br />

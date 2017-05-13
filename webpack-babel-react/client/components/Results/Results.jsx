@@ -6,7 +6,7 @@ import MoviesList from './MoviesList';
 const Results = ({ movies }) => {
   return (
     <div>
-      <ResultsHeader />
+      <ResultsHeader moviesCount={movies.length} />
       <MoviesList
         movies={movies}
       />

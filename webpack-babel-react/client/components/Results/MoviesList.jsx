@@ -10,7 +10,9 @@ const MoviesList = ({ movies }) => {
   });
   return (
     <div className="text-center">
-      { movieList }
+      <ul className="movie-list">
+        { movieList }
+      </ul>
     </div>
   );
 };
